@@ -26,7 +26,7 @@
             <a class="h1" href="/"><b>ToDo App</b></a>
         </div>
         <div class="card-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+            <p class="login-box-msg"> {{__('auth.sign_in_message')}} </p>
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf

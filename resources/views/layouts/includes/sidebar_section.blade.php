@@ -6,7 +6,7 @@
              alt="AdminLTE Logo"
              class="brand-image img-circle elevation-3"
              style="opacity: .8">
-        <span class="brand-text font-weight-light">Inbox Trial</span>
+        <span class="brand-text font-weight-light">ToDo App</span>
     </a>
 
     <!-- Sidebar -->
@@ -17,12 +17,6 @@
                 <li class="nav-item">
                     <a href="{{route('home')}}" class="nav-link">
                         <i class="nav-icon fas fa-home"></i> <p>Home</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('cart.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-shopping-cart"></i> <p>Cart <span class="badge badge-info right">{{\App\Models\Cart::myOpenCarts(\Illuminate\Support\Facades\Auth::user()->getAuthIdentifier())->count()}}</span></p>
-
                     </a>
                 </li>
             </ul>

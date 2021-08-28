@@ -14,7 +14,11 @@ return [
     */
 
     'failed' => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'sign_in_message' => 'Sign in to start your session',
+    'recover_password' => 'I forgot my password',
+    'sign_in_button' => 'Sign In'
+
+
 
 ];

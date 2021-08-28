@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Inbox Agency Trial | Log in</title>
+    <title>ToDo App | Log in</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,15 +19,14 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition login-page">
+<body class="login-page">
 <div class="login-box">
-    <div class="login-logo">
-        <a href="/"><b>Login</b></a>
-    </div>
-    <!-- /.login-logo -->
-    <div class="card">
-        <div class="card-body login-card-body">
-            <p class="login-box-msg">{{__('auth.sign_in_message')}}</p>
+    <div class="card card-outline">
+        <div class="card-header text-center">
+            <a class="h1" href="/"><b>ToDo App</b></a>
+        </div>
+        <div class="card-body">
+            <p class="login-box-msg">Sign in to start your session</p>
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf
@@ -72,7 +71,6 @@
                 </div>
             </form>
         </div>
-        <!-- /.login-card-body -->
     </div>
 </div>
 <!-- /.login-box -->

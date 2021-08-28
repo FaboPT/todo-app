@@ -28,7 +28,7 @@ docker run --rm -v /$(pwd):/app composer install
 docker run --rm -v ${PWD}:/app composer install
 ```
 
-### Copy .env.example to .env
+### Copy all file .env.example to .env
 
 Change database configurations in **.env**
 

@@ -2,7 +2,9 @@
 
 namespace App\Repositories;
 
-class BaseRepository
+use Illuminate\Database\Eloquent\Collection;
+
+abstract class BaseRepository
 {
     protected $obj;
 
@@ -11,38 +13,11 @@ class BaseRepository
         $this->obj = $obj;
     }
 
-    public function all(): object
-    {
-        return $this->obj->all();
-    }
+    abstract protected function all(): Collection;
 
-    public function find(int $id): object
-    {
-        return $this->obj->find($id);
-    }
+    abstract public function store(array $attributes): bool;
 
-    public function findOrFail(int $id): object
-    {
-        return $this->obj->findOrFail($id);
-    }
+    abstract public function update(int $id, array $attributes): bool;
 
-    public function findByColumn(string $column, $value): object
-    {
-        return $this->obj->where($column, $value)->get();
-    }
-
-    public function store(array $attributes): bool
-    {
-        return $this->obj->insert($attributes);
-    }
-
-    public function update(int $id, array $attributes): bool
-    {
-        return $this->obj->findOrFail($id)->update($attributes);
-    }
-
-    public function destroy(int $id): bool
-    {
-        return $this->obj->findOrFail($id)->delete();
-    }
+    abstract public function destroy(int $id): bool;
 }

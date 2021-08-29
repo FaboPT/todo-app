@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Task;
 use App\Repositories\TaskRepository;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -22,6 +23,12 @@ class TaskService
     {
         return $this->taskRepository->store($data);
     }
+
+    public function edit(int $id): Task
+    {
+        return $this->taskRepository->edit($id);
+    }
+
 
     public function update($id,$data): bool
     {

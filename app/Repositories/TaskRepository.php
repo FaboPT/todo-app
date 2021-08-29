@@ -21,9 +21,9 @@ class TaskRepository extends BaseRepository
         return $this->task->with('user')->myTasks(Auth::user()->getAuthIdentifier())->get();
     }
 
-    public function store(array $attributes): bool
+    public function store(array $attributes): Model
     {
-        return $this->task->insert($attributes);
+        return $this->task->create($attributes);
     }
 
     public function update(int $id, array $attributes): bool

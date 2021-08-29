@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\Task;
 use App\Repositories\TaskRepository;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 
 class TaskService
 {
@@ -19,7 +20,7 @@ class TaskService
         return $this->taskRepository->all();
     }
 
-    public function store($data): bool
+    public function store($data): Model
     {
         return $this->taskRepository->store($data);
     }

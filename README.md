@@ -34,12 +34,20 @@ Change database configurations in **.env**
 
 ```
 DB_CONNECTION=mysql
-DB_HOST=mysql_inbox_test
+DB_HOST=mysql_todo_app
 DB_PORT=3306
-DB_DATABASE=yourdatabase
+DB_DATABASE=yourdatabasename
 DB_USERNAME=root
 DB_PASSWORD=yourpassword
 ```
+
+### Configure PHPUnit file
+change  line **25** phpunit.xml in **phpunit.xml**
+
+```
+<server name="DB_DATABASE" value="yourdatabasename"/>
+```
+
 
 ### Detach the application
 

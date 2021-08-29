@@ -36,6 +36,9 @@
                                 <!-- todo text -->
                                 <span class="text">{{$item->name}}</span>
                                 <small class="text-gray">{{$item->description ? : ''}}</small>
+                                @if($item->status === 1 && $item->done_at)
+                                    <small class="badge badge-success"><i class="fas fa-check-square"></i> {{$item->done_at}}</small>
+                                @endif
                                 <!-- Emphasis label -->
                                 <!-- General tools such as edit or delete-->
                                 <div class="tools">

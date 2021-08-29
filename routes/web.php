@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return redirect()->route('task.index');
+})->name('home');
 
 
 Route::any('/register', function(){
@@ -29,9 +31,9 @@ Route::any('password', function (){
 
 Route::prefix('tasks')->middleware('auth')->group(function() {
     Route::get('',[TaskController::class,'index'])->name('task.index');
-    Route::get('/create',[TaskController::class,'index'])->name('task.create');
     Route::post('',[TaskController::class,'store'])->name('task.store');
-    Route::get('/{id}/edit',[TaskController::class,'edit'])->name('task.edit');
+    Route::get('/edit/{id}',[TaskController::class,'edit'])->name('task.edit');
     Route::put('/{id}',[TaskController::class,'update'])->name('task.update');
     Route::delete('/{id}',[TaskController::class,'destroy'])->name('task.destroy');
+    Route::put('/set-status/{id}',[TaskController::class,'setStatus'])->name('task.setStatus');
 });

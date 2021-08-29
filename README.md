@@ -86,6 +86,13 @@ DB_USERNAME=root
 DB_PASSWORD=yourpassword
 ```
 
+### Configure PHPUnit file
+change value line **25** phpunit.xml in **phpunit.xml**
+
+```
+<server name="DB_DATABASE" value="yourdatabasename"/>
+```
+
 ### Generate APP Key
 
 ```

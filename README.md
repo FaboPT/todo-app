@@ -42,7 +42,7 @@ DB_PASSWORD=yourpassword
 ```
 
 ### Configure PHPUnit file
-change  line **25** phpunit.xml in **phpunit.xml**
+change value line **25** phpunit.xml in **phpunit.xml**
 
 ```
 <server name="DB_DATABASE" value="yourdatabasename"/>

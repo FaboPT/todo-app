@@ -61,8 +61,7 @@ docker-compose exec app php artisan key:generate
 ```
 ### Run the migrations and seed script
 ```
-docker-compose exec app php artisan migrate
-docker-compose exec app php artisan db:seed
+docker-compose exec app php artisan migrate --seed
 ```
 ### Open browser http://localhost:8000
 ### Login
@@ -101,8 +100,7 @@ php artisan key:generate
 
 ### Run the migrations and seed script
 ```
-php artisan migrate
-php artisan db:seed
+php artisan migrate --seed
 ```
 
 ### Run server

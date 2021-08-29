@@ -24,7 +24,8 @@ class TaskSetStatusRequest extends FormRequest
     public function rules()
     {
         return [
-            'status'=>'bail|required|integer'
+            'status'=>'bail|required|integer',
+            'done_at'=>'bail|nullable|date'
         ];
     }
 }

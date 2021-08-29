@@ -40,7 +40,7 @@ class TaskRepository extends BaseRepository
         return $this->task->findOrFail($id);
     }
 
-    public function setStatus(int $id,int $status_id): bool {
-        return $this->task->findOrFail($id)->update(['status'=>$status_id]);
+    public function setStatus(int $id,array $attributes): bool {
+        return $this->task->findOrFail($id)->update($attributes);
     }
 }

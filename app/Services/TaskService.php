@@ -40,7 +40,7 @@ class TaskService
         return $this->taskRepository->destroy($id);
     }
 
-    public function setStatus($id,$status): bool{
-        return $this->taskRepository->setStatus($id,$status);
+    public function setStatus($id,$data): bool{
+        return $this->taskRepository->setStatus($id,$data);
     }
 }

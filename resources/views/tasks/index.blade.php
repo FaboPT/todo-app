@@ -166,6 +166,7 @@
                     url: "/tasks/set-status/" + taskId,
                     data: {
                         status: isChecked ? 1 : 0,
+                        done_at: isChecked ? "{{\Carbon\Carbon::now()}}" : null,
                         _token: "{{csrf_token()}}"
                     }
                 })

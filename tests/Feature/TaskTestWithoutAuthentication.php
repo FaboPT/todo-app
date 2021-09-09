@@ -12,7 +12,7 @@ class TaskTestWithoutAuthentication extends TestCase
 {
     public function test_get_tasks_without_authentication()
     {
-        $response = $this->get('/tasks');
+        $response = $this->get(route('task.index'));
 
         $response->assertRedirect('/login');
     }

@@ -17,6 +17,7 @@ use Illuminate\View\View;
 class TaskController extends Controller
 {
     private $taskService;
+
     public function __construct(TaskService $taskService)
     {
         $this->taskService = $taskService;
@@ -42,30 +43,14 @@ class TaskController extends Controller
      */
     public function store(TaskRequest $request): RedirectResponse
     {
-        DB::beginTransaction();
-        try {
-            $request->merge(['user_id'=>Auth::user()->getAuthIdentifier()]);
-            $task = $this->taskService->store($request->except('_token'));
-            if($task)
-            {
-                DB::commit();
-                flash()->success('Task successfully created')->important();
-                return redirect()->route('task.index');
-            }
-            Throw new \Exception();
-        }
-        catch (\Exception $e)
-        {
-            DB::rollBack();
-            flash()->error('Something went wrong')->important();
-            return back(307);
-        }
+        $request->merge(['user_id' => Auth::user()->getAuthIdentifier()]);
+        return $this->taskService->store($request->except('_token'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return View
      *
      */
@@ -85,75 +70,31 @@ class TaskController extends Controller
      * @param int $id
      * @return RedirectResponse
      */
-    public function update(TaskRequest $request, int $id):RedirectResponse
+    public function update(TaskRequest $request, int $id): RedirectResponse
     {
-        DB::beginTransaction();
-        try {
-            $task = $this->taskService->update($id,$request->all());
-            if($task)
-            {
-                DB::commit();
-                flash()->success('Task successfully updated')->important();
-                return redirect()->route('task.index');
-            }
-            Throw new \Exception();
-        }
-        catch (\Exception $e)
-        {
-            DB::rollBack();
-            flash()->error('Something went wrong')->important();
-            return back(307)->withInput();
-        }
+        return $this->taskService->update($id, $request->all());
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param int $id
      * @return bool
      */
     public function destroy(int $id): bool
     {
-        DB::beginTransaction();
-        try {
-            $task = $this->taskService->destroy($id);
-            if($task)
-            {
-                DB::commit();
-                return true;
-            }
-            Throw new \Exception();
-        }
-        catch (\Exception $e)
-        {
-            DB::rollBack();
-            return false;
-        }
+        return $this->taskService->destroy($id);
     }
 
     /**
      * Change status in task
      *
-     * @param  int $id
+     * @param int $id
      * @return bool
      */
     public function setStatus(int $id, TaskSetStatusRequest $request): bool
     {
-        DB::beginTransaction();
-        try {
-            $data = ['status'=>$request->input('status'),'done_at'=>$request->input('done_at')];
-            $task = $this->taskService->setStatus($id,$data);
-            if($task)
-            {
-                DB::commit();
-                return true;
-            }
-            Throw new \Exception();
-        }
-        catch (\Exception $e)
-        {
-            DB::rollBack();
-            return false;
-        }
+        $data = ['status' => $request->input('status'), 'done_at' => $request->input('done_at')];
+        return $this->taskService->setStatus($id, $data);
     }
 }

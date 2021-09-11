@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\TaskSetStatusRequest;
 use App\Http\Requests\TaskRequest;
-use App\Models\Task;
+use App\Http\Requests\TaskSetStatusRequest;
 use App\Services\TaskService;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
 class TaskController extends Controller

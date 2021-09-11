@@ -2,12 +2,12 @@
 
 ## Requirements
 
-- [docker](https://www.docker.com/products/docker-desktop)
+- [Docker](https://www.docker.com/products/docker-desktop)
 
   #### OR
 
 - php >= 7.3 | php >= 8.0
-- [composer](https://getcomposer.org/download/)
+- [Composer](https://getcomposer.org/download/)
 - MySQL
 ## Info
 - [Laravel 8 Info](https://laravel.com/docs/8.x/installation)

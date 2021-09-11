@@ -18,7 +18,7 @@ class CreateTasksTable extends Migration
             $table->string('name');
             $table->string('description',2500)->nullable();
             $table->integer('status')->default(0);
-            $table->foreignId('user_id')->nullable()->references('id')->on('users')->cascadeOnDelete();
+            $table->foreignId('user_id')->nullable()->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->dateTime('done_at')->nullable();
             $table->timestamps();
             $table->softDeletes();

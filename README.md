@@ -122,10 +122,12 @@ php artisan serve
 - Go your database and seed the fake users created and choose one
 - Password for users -> **password**
 
-### Production
+## Production
 
-```
-https://production-todo-app.herokuapp.com/
-```
+### Open browser https://production-todo-app.herokuapp.com
 
+### Login
+
+- user-test@example.com
+- Password for users -> **password**
 

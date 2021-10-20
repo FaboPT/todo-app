@@ -116,8 +116,16 @@ php artisan serve
 ```
 
 ### Open browser http://localhost:8000
+
 ### Login
+
 - Go your database and seed the fake users created and choose one
 - Password for users -> **password**
+
+### Production
+
+```
+https://production-todo-app.herokuapp.com/
+```
 
 

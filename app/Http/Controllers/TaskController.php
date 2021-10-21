@@ -85,6 +85,7 @@ class TaskController extends Controller
      * Change status in task
      *
      * @param int $id
+     * @param TaskSetStatusRequest $request
      * @return bool
      */
     public function setStatus(int $id, TaskSetStatusRequest $request): bool

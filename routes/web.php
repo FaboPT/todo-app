@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+\Illuminate\Support\Facades\Auth::routes();
 
 Route::get('/', function () {
     return redirect()->route('task.index');

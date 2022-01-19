@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class TaskService
 {
-    protected $taskRepository;
+    protected TaskRepository $taskRepository;
 
     public function __construct(TaskRepository $taskRepository)
     {

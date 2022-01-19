@@ -9,11 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class TaskRepository extends BaseRepository
 {
-    protected $task;
+    protected Task $task;
     public function __construct(Task $task)
     {
         $this->task = $task;
-        parent::__construct($this->task);
     }
 
 

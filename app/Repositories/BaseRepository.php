@@ -7,13 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 abstract class BaseRepository
 {
-    protected $obj;
-
-    protected function __construct(object $obj)
-    {
-        $this->obj = $obj;
-    }
-
     abstract protected function all(): Collection;
 
     abstract public function store(array $attributes): Model;

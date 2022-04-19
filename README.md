@@ -10,7 +10,7 @@
 - [Composer](https://getcomposer.org/download/)
 - MySQL
 ## Info
-- [Laravel 8 Info](https://laravel.com/docs/8.x/installation)
+- [Laravel 9 Info](https://laravel.com/docs/9.x/installation)
 
 ## Installation/Configuration WITH DOCKER
 
@@ -121,6 +121,15 @@ php artisan serve
 
 - Go your database and seed the fake users created and choose one
 - Password for users -> **password**
+
+### Configure Access Local Database
+
+```
+Host: 127.0.0.1
+Port: 3308
+Username : root
+Password: yourdatabasepassword
+```
 
 ## Production
 

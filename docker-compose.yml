@@ -8,14 +8,6 @@ services:
         container_name: nginx_todo_app
         ports:
             - "8000:80"
-        deploy:
-            resources:
-                limits:
-                    cpus: "4"
-                    memory: 4096M
-                reservations:
-                    cpus: "2"
-                    memory: 2048M
         extra_hosts:
             - "todo-app:127.0.0.1"
         volumes:
@@ -51,14 +43,6 @@ services:
         volumes:
             - ./:/var/www:delegated
             - ./vendor:/var/www/vendor:cached
-        deploy:
-            resources:
-                limits:
-                    cpus: "4"
-                    memory: 4096M
-                reservations:
-                    cpus: "2"
-                    memory: 2048M
         networks:
             - todo-app
 volumes:

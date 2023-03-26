@@ -6,7 +6,7 @@
 
   #### OR
 
-- php >= 8.1
+- php >= 8.2
 - [Composer](https://getcomposer.org/download/)
 - MySQL
 ## Info

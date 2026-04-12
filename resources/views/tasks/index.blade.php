@@ -74,24 +74,19 @@
                         <span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
-                    {{ Form::open([
-                                    'route'=>'task.store',
-                                    'method'=>'POST',
-                                    'accept-charset'=>'UTF-8',
-                                    'class'=>'form-horizontal'
-                            ])}}
+                    {!! html()->form('POST', route('task.store'))->class('form-horizontal')->open() !!}
 
                     <div class="form-group row">
-                        {{Form::label('name','Name:',['class'=>'col-lg-1 col-form-label'])}}
+                        {!! html()->label('Name:', 'name')->class('col-lg-1 col-form-label') !!}
                         <div class="col-lg-11">
-                            {{Form::text('name',null, ['class'=>'form-control','placeholder'=>'Name', 'required'])}}
+                            {!! html()->text('name')->class('form-control')->placeholder('Name')->required() !!}
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        {{Form::label('description','Description:',['class'=>'col-lg-1 col-form-label'])}}
+                        {!! html()->label('Description:', 'description')->class('col-lg-1 col-form-label') !!}
                         <div class="col-lg-11">
-                            {{Form::textarea('description',null, ['class'=>'form-control','placeholder'=>'Description'])}}
+                            {!! html()->textarea('description')->class('form-control')->placeholder('Description') !!}
                         </div>
                     </div>
 
@@ -99,7 +94,7 @@
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-outline-primary">Create task</button>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
             <!-- /.modal-content -->
